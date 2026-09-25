@@ -1,0 +1,844 @@
+/* ==========================================================================
+   HIRESENSE MAIN DASHBOARD STYLES
+   Pixel-accurate recreation of the Executive Operations Dashboard UI
+   ========================================================================== */
+
+/* Main Dashboard Outer Wrapper */
+.main-dashboard-wrapper {
+  width: 100%;
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 8px 0 36px;
+  box-sizing: border-box;
+}
+
+/* 2-Column Split: Left (~59%) and Right (~41%) */
+.main-dashboard-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+/* Card Common */
+.dash-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px 26px;
+  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.035), 0 1px 3px rgba(15, 23, 42, 0.02);
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  box-sizing: border-box;
+  position: relative;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.dash-box:hover {
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+/* Left Stack */
+.main-dash-left-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* ==========================================================================
+   CARD 1: Attendance Overview
+   ========================================================================== */
+.card-att-overview {
+  display: flex;
+  flex-direction: column;
+}
+
+.att-overview-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.att-overview-title-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.att-overview-icon-box {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.att-overview-title-text h2 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 3px 0;
+  letter-spacing: -0.25px;
+}
+
+.att-overview-title-text p {
+  font-size: 12.5px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.att-overview-period-btn {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #1e293b;
+  font-size: 12.5px;
+  font-weight: 550;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.att-overview-period-btn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+}
+
+/* Attendance Overview Content */
+.att-overview-body {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 20px;
+  align-items: center;
+}
+
+.att-overview-stats-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.att-stat-group {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.att-stat-big-num {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+
+.att-stat-big-num small {
+  font-size: 16px;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-left: 2px;
+}
+
+.att-stat-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Weekly Bar Chart Area */
+.att-overview-chart-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.att-chart-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.att-avg-hours-label {
+  font-size: 12px;
+  color: #1e293b;
+  letter-spacing: -0.1px;
+}
+
+.att-avg-hours-label b {
+  font-weight: 750;
+}
+
+.att-get-ai-btn {
+  border: none;
+  background: #4d88ec;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 650;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 2px 6px rgba(77, 136, 236, 0.25);
+  font-family: inherit;
+}
+
+.att-get-ai-btn:hover {
+  background: #3b76dc;
+  transform: translateY(-1px);
+}
+
+/* Weekly Bars */
+.att-bars-track {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 140px;
+  padding: 0 4px;
+  position: relative;
+}
+
+.att-bar-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.att-bar-shape-wrap {
+  width: 100%;
+  max-width: 22px;
+  height: 110px;
+  display: flex;
+  align-items: flex-end;
+  background: #f8fafc;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.att-bar-fill {
+  width: 100%;
+  border-radius: 9999px;
+  transition: height 0.4s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
+}
+
+.att-bar-fill.gray {
+  background: #e2e8f0;
+}
+
+.att-bar-fill.blue {
+  background: #4d88ec;
+  box-shadow: 0 2px 8px rgba(77, 136, 236, 0.35);
+}
+
+.att-bar-day-name {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: #94a3b8;
+}
+
+.att-bar-column:hover .att-bar-fill.gray {
+  background: #cbd5e1;
+}
+
+.att-bar-column:hover .att-bar-fill.blue {
+  background: #3b76dc;
+}
+
+/* ==========================================================================
+   BOTTOM ROW: Payroll & Finance (Left) + Engagement & Workload (Right)
+   ========================================================================== */
+.main-dash-bottom-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.25fr);
+  gap: 20px;
+}
+
+/* CARD 2A: Payroll & Finance Snapshot */
+.card-payroll-finance-snap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.pf-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pf-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  color: #334155;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.pf-header h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.pf-val-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.pf-label {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.pf-big-val {
+  font-size: 34px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+  letter-spacing: -0.5px;
+}
+
+.pf-pill-badge {
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 9999px;
+}
+
+.pf-subtext {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* Dot Matrix Bubble Chart */
+.pf-dots-chart {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 5px;
+  align-items: end;
+  height: 60px;
+  padding: 6px 0;
+}
+
+.pf-dot-col {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.pf-circle-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.pf-circle-dot.active {
+  background: #e2e8f0;
+}
+
+.pf-dot-col:hover .pf-circle-dot {
+  background: #93c5fd;
+}
+
+/* Robot Blue Callout Banner */
+.pf-robot-banner {
+  background: #4d88ec;
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 11.5px;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.pf-robot-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+/* CARD 2B: Engagement Health Score & Workload Monitor */
+.card-engagement-workload {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.eng-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.eng-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eng-head h2 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.2px;
+}
+
+.eng-desc {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.eng-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+}
+
+.eng-score-left {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.eng-big-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.eng-score-label {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.eng-great-pill {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 9999px;
+  letter-spacing: 0.2px;
+}
+
+/* Workload Monitor Section */
+.workload-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+}
+
+.workload-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.workload-head h2 {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0;
+}
+
+.workload-stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.workload-big-num {
+  font-size: 26px;
+  font-weight: 800;
+  color: #1e293b;
+  line-height: 1;
+}
+
+.workload-stat-label {
+  font-size: 12.5px;
+  color: #64748b;
+}
+
+.workload-callout-blue {
+  background: #f0f7ff;
+  border-radius: 12px;
+  padding: 9px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: #2563eb;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.workload-foot-action {
+  text-align: right;
+  margin-top: 2px;
+}
+
+.workload-redistribute-btn {
+  border: none;
+  background: transparent;
+  color: #1e293b;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s ease;
+}
+
+.workload-redistribute-btn:hover {
+  color: #4d88ec;
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: Calendar Schedule + Recent Attendance
+   ========================================================================== */
+.main-dash-right-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* CARD 3: August 2025 Calendar & Schedule */
+.card-schedule-meetings {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.schedule-month-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+/* Day selector row */
+.schedule-days-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.schedule-day-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  padding: 6px 2px;
+  border-radius: 12px;
+  transition: background 0.15s ease;
+}
+
+.schedule-day-cell:hover {
+  background: #f8fafc;
+}
+
+.sched-day-name {
+  font-size: 11.5px;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+.sched-day-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #64748b;
+  transition: all 0.15s ease;
+}
+
+.schedule-day-cell.active .sched-day-num {
+  background: #4d88ec;
+  color: #ffffff;
+  font-weight: 750;
+  box-shadow: 0 2px 8px rgba(77, 136, 236, 0.35);
+}
+
+.sched-day-dots {
+  display: flex;
+  align-items: center;
+  gap: 2.5px;
+  height: 4px;
+}
+
+.sched-dot {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #cbd5e1;
+}
+
+.schedule-day-cell.active .sched-dot,
+.schedule-day-cell.has-blue .sched-dot {
+  background: #4d88ec;
+}
+
+/* Meetings List */
+.schedule-meetings-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 14px;
+  gap: 12px;
+}
+
+.meeting-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background 0.15s ease;
+  cursor: pointer;
+}
+
+.meeting-row:hover {
+  background: #f8fafc;
+}
+
+.meeting-row-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.meeting-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meeting-meet-now-badge {
+  background: #f87171;
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.meeting-time-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.meeting-time {
+  font-size: 11.5px;
+  color: #64748b;
+}
+
+.meeting-attendees-stack {
+  display: flex;
+  align-items: center;
+}
+
+.meeting-att-avatar {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1.5px solid #ffffff;
+  margin-left: -5px;
+  overflow: hidden;
+}
+
+.meeting-att-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CARD 4: Recent Attendance (2 rows) */
+.card-recent-att-dash {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* Status badge pills for recent attendance */
+.rec-status-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10.5px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  letter-spacing: 0.1px;
+}
+
+.rec-status-badge.late {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.rec-status-badge.punctual {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+:root[data-theme="dark"] .rec-status-badge.late {
+  background: #78350f;
+  color: #fde68a;
+}
+
+:root[data-theme="dark"] .rec-status-badge.punctual {
+  background: #064e3b;
+  color: #a7f3d0;
+}
+
+/* ==========================================================================
+   DARK THEME ADAPTATIONS
+   ========================================================================== */
+:root[data-theme="dark"] .dash-box,
+:root[data-theme="dark"] .card-performers-white,
+:root[data-theme="dark"] .card-payroll-finance-snap,
+:root[data-theme="dark"] .card-engagement-workload,
+:root[data-theme="dark"] .card-schedule-meetings,
+:root[data-theme="dark"] .card-recent-att-dash {
+  background: #192538;
+  border-color: #2d3b50;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme="dark"] .att-overview-icon-box,
+:root[data-theme="dark"] .pf-icon-box,
+:root[data-theme="dark"] .recent-att-icon-box {
+  background: #202d41;
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .att-overview-title-text h2,
+:root[data-theme="dark"] .att-stat-big-num,
+:root[data-theme="dark"] .att-avg-hours-label,
+:root[data-theme="dark"] .pf-header h2,
+:root[data-theme="dark"] .pf-big-val,
+:root[data-theme="dark"] .eng-head h2,
+:root[data-theme="dark"] .eng-big-num,
+:root[data-theme="dark"] .workload-head h2,
+:root[data-theme="dark"] .workload-big-num,
+:root[data-theme="dark"] .schedule-month-title,
+:root[data-theme="dark"] .meeting-title,
+:root[data-theme="dark"] .workload-redistribute-btn {
+  color: #f1f5f9;
+}
+
+:root[data-theme="dark"] .att-overview-title-text p,
+:root[data-theme="dark"] .att-stat-label,
+:root[data-theme="dark"] .pf-label,
+:root[data-theme="dark"] .pf-subtext,
+:root[data-theme="dark"] .eng-desc,
+:root[data-theme="dark"] .eng-score-label,
+:root[data-theme="dark"] .workload-stat-label,
+:root[data-theme="dark"] .meeting-time {
+  color: #94a3b8;
+}
+
+:root[data-theme="dark"] .att-overview-period-btn {
+  background: #202d41;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+:root[data-theme="dark"] .att-bar-shape-wrap {
+  background: #202d41;
+}
+
+:root[data-theme="dark"] .att-bar-fill.gray {
+  background: #334155;
+}
+
+:root[data-theme="dark"] .workload-callout-blue {
+  background: #1e3a5f;
+  color: #60a5fa;
+}
+
+:root[data-theme="dark"] .meeting-row:hover,
+:root[data-theme="dark"] .schedule-day-cell:hover {
+  background: #202d41;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .main-dashboard-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .att-overview-body {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .main-dash-bottom-split {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .dash-box {
+    padding: 18px 20px;
+  }
+}

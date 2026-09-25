@@ -20,6 +20,7 @@ export const translations = {
     cancel: 'Cancel',
     status: 'Status',
     currentMonthLabel: 'Calendar Overview',
+    mockDataBadge: 'DEMO DATA',
 
     // Payroll
     payProcessed: 'Processed',

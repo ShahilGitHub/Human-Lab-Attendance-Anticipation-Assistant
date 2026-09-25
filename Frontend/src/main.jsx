@@ -10,6 +10,12 @@ import './styles/base/professional.css';
 import './styles/base/product.css';
 import './styles/base/polish.css';
 import './styles/components/hiresense-header.css';
+import './styles/components/hiresense-dashboard.css';
+import './styles/components/hiresense-main-dashboard.css';
+import './styles/components/hiresense-attendance.css';
+import './styles/components/hiresense-employee.css';
+import './styles/components/hiresense-payroll.css';
+import './styles/components/hiresense-subpages.css';
 
 createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>);
 const themeRoot = document.createElement('div');
