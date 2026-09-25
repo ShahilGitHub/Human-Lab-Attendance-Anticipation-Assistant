@@ -1,0 +1,31 @@
+:root{color-scheme:light;--surface:#fff;--surface-soft:#f5f7fa;--surface-muted:#f8f9fb;--ink:#172340;--muted:#71809a;--line:#e8ebf1;--field:#fff;--shadow:0 12px 30px #0d14241c;transition:background-color .2s,color .2s}
+:root[data-theme="dark"]{color-scheme:dark;--surface:#202a3d;--surface-soft:#28344a;--surface-muted:#182234;--ink:#e7edf8;--muted:#a0aec4;--line:#354158;--field:#1d293d;--shadow:0 12px 34px #0005}
+:root[data-theme="dark"] body{background:var(--surface-muted);color:var(--ink)}
+:root[data-theme="dark"] main header{border-color:var(--line)}
+:root[data-theme="dark"] .metric-card,:root[data-theme="dark"] .panel,:root[data-theme="dark"] .person-card,:root[data-theme="dark"] .date-menu,:root[data-theme="dark"] .modal,:root[data-theme="dark"] .toolbar label,:root[data-theme="dark"] .toolbar button,:root[data-theme="dark"] .filter-tabs button,:root[data-theme="dark"] .settings-card select,:root[data-theme="dark"] .secondary-button{background:var(--surface);border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .metric-card.emphasis{background:#203b3a;border-color:#315b53}
+:root[data-theme="dark"] .metric-card p,:root[data-theme="dark"] .metric-card small,:root[data-theme="dark"] .shift-time span,:root[data-theme="dark"] .shift-place small,:root[data-theme="dark"] .people-list small,:root[data-theme="dark"] .person-card>p,:root[data-theme="dark"] .settings-card p,:root[data-theme="dark"] .modal-sub{color:#9eacc1}
+:root[data-theme="dark"] .eyebrow,:root[data-theme="dark"] .crumb,:root[data-theme="dark"] .text-button,:root[data-theme="dark"] .legend,:root[data-theme="dark"] .table-note{color:#a5b1c5}
+:root[data-theme="dark"] .risk-summary{background:#3a2c37}
+:root[data-theme="dark"] .risk-summary span{color:#d1b9b5}
+:root[data-theme="dark"] .shift-list,:root[data-theme="dark"] .shift-row,:root[data-theme="dark"] .days{border-color:var(--line)}
+:root[data-theme="dark"] .bar{background:#3c475b}
+:root[data-theme="dark"] .assistant-panel{background:#253a68;color:white}
+:root[data-theme="dark"] .assistant-panel .eyebrow{color:#aebcda}
+:root[data-theme="dark"] .assistant-panel .panel-heading h2{color:#fff}
+:root[data-theme="dark"] .ask-form,:root[data-theme="dark"] .policy-answer{background:#f7f8fb;color:#27344c}
+:root[data-theme="dark"] .ask-form input,:root[data-theme="dark"] .toolbar input{background:transparent;color:var(--ink)}
+:root[data-theme="dark"] .toolbar input::placeholder,:root[data-theme="dark"] .ask-form input::placeholder{color:#8a98ad}
+:root[data-theme="dark"] .date-menu button{background:transparent;color:var(--ink)}
+:root[data-theme="dark"] .date-menu button:hover,:root[data-theme="dark"] .person-note{background:var(--surface-soft)}
+:root[data-theme="dark"] .person-note{color:#b7c2d3}
+:root[data-theme="dark"] .risk-badge.high{background:#583739;color:#ffb1a4}
+:root[data-theme="dark"] .risk-badge.medium{background:#51432c;color:#f0c478}
+:root[data-theme="dark"] .risk-badge.low{background:#294b43;color:#91d7bd}
+:root[data-theme="dark"] .filter-tabs .selected{background:#506a9d;border-color:#506a9d;color:white}
+:root[data-theme="dark"] .action-box,:root[data-theme="dark"] .brief-block{background:#263e3b}
+:root[data-theme="dark"] .action-box p,:root[data-theme="dark"] .brief-block p{color:#cad8d2}
+:root[data-theme="dark"] .switch{background:#55b393}
+.theme-toggle{position:fixed;right:24px;bottom:22px;z-index:30;display:flex;align-items:center;gap:8px;padding:10px 13px;border:1px solid var(--line);border-radius:30px;background:var(--surface);color:var(--ink);box-shadow:var(--shadow);font:600 11px 'DM Sans',sans-serif;transition:transform .2s,background-color .2s,color .2s}
+.theme-toggle:hover{transform:translateY(-2px)}.theme-toggle>span:first-child{font-size:15px;color:#d7963a}.theme-label{white-space:nowrap}
+@media(max-width:750px){.theme-toggle{right:13px;bottom:13px;padding:10px}.theme-label{display:none}}
